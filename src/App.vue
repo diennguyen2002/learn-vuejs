@@ -8,7 +8,13 @@
             <ListUser v-bind:listUser="listUser" />
             <ComFooter v-bind:footerText="footerText" /> -->
             <!-- <DemoRef /> -->
-            <DemoSlot />
+            <!-- <DemoSlot /> -->
+            <DemoRender v-bind:level="1">
+                Demo render H1
+            </DemoRender>
+            <DemoRender v-bind:level="2">
+                Demo render H2
+            </DemoRender>
         </div>
     </div>
 </template>
@@ -19,6 +25,7 @@ import ListUser from "./components/ListUser";
 import ComFooter from "./components/ComFooter";
 import DemoRef from "./components/DemoRef";
 import DemoSlot from "./components/DemoSlot";
+import DemoRender from "./components/DemoRender"
 export default {
     name: "app",
     components: {
@@ -26,7 +33,8 @@ export default {
         ListUser,
         ComFooter,
         DemoRef,
-        DemoSlot
+        DemoSlot,
+        DemoRender
     },
     data() {
         return {
