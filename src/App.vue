@@ -1,55 +1,35 @@
 <template>
     <div id="app">
         <div class="container">
-            <!-- <ComHeader 
-              v-bind:headerText="headerText" 
-              v-on:change-header="handleChangeHeader"
-            />
-            <ListUser v-bind:listUser="listUser" />
-            <ComFooter v-bind:footerText="footerText" /> -->
-            <!-- <DemoRef /> -->
-            <!-- <DemoSlot /> -->
-            <DemoTransition />
+            <h1>Router Link</h1>
+                <p>
+                    <!-- use router-link component for navigation. -->
+                    <!-- specify the link by passing the `to` prop. -->
+                    <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+                    <router-link to="/home">Home | </router-link>
+                    <router-link to="/about">About | </router-link>
+                    <router-link to="/contact">Contact | </router-link>
+                    <router-link to="/demoref">Demo Ref | </router-link>
+                    <router-link to="/demorender">Demo Render | </router-link>
+                    <router-link to="/demoslot">Demo Slot | </router-link>
+                </p>
+                <!-- route outlet -->
+                <!-- component matched by the route will render here -->
+                <router-view></router-view>
         </div>
     </div>
 </template>
 
 <script>
-import ComHeader from "./components/ComHeader";
-import ListUser from "./components/ListUser";
-import ComFooter from "./components/ComFooter";
-import DemoRef from "./components/DemoRef";
-import DemoSlot from "./components/DemoSlot";
-import DemoTransition from "./components/DemoTransition";
 export default {
     name: "app",
     components: {
-        ComHeader,
-        ListUser,
-        ComFooter,
-        DemoRef,
-        DemoSlot,
-        DemoTransition
     },
     data() {
         return {
-            headerText: "Welcome to Your Vue.js",
-            footerText: "I am footer",
-            listUser: [
-                { email: "testmail1@gmail.com", active: false },
-                { email: "testmail2@gmail.com", active: false },
-                { email: "testmail3@gmail.com", active: true },
-                { email: "testmail4@gmail.com", active: false },
-                { email: "testmail5@gmail.com", active: true },
-                { email: "testmail6@gmail.com", active: false }
-            ]
         };
     },
     methods: {
-        handleChangeHeader(event) {
-            this.headerText = event.headerText;
-            console.log("event from App component");
-        }
     }
 };
 </script>
